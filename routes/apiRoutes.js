@@ -46,8 +46,16 @@ app.delete("/notes/:id", (req, res) => {
         } else {
             const notes = JSON.parse(data);
             // Create a new array of notes except the one with the id
-            const notesArr = notes.filter((note) => note.id !== id)
+            const notesArr = notes.filter((note) => note.id !== id);
 
+            // Save the array to the filesystem
+            fs.writeFile("./db/db.json", JSON.stringify(notesArr), (err) => {
+                if (err) {
+                    console.error(err) 
+                } else {
+                    res.json(notesArr);
+                }
+            })
         }
     })
 })
