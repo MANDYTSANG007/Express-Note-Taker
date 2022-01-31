@@ -1,3 +1,4 @@
+const e = require("express");
 const fs = require("fs");
 // 
 const uuid = require("uuid");
@@ -19,11 +20,34 @@ app.post("/notes", (req, res) => {
     // Assign newNote in req.body and give newNote an unique id
     const newNote = req.body;
     newNote.id = uuid;
-    fs.writeFile("./db/db.json", JSON.stringify(notes), (err) => {
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) {
-            console.error(err)
+            console.error(err);
         } else {
-            res.json(notes);
+            const notes = JSON.parse(data);
+            notes.push(newNote);
+            fs.writeFile("./db/db.json", JSON.stringify(notes), (err) => {
+                if (err) {
+                    console.error(err)
+                } else {
+                    res.json(notes);
+                }
+            })
+        }
+    })
+})
+
+//delete note
+app.delete("/notes/:id", (req, res) => {
+    const id = req.params.id;
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
+        if (err) {
+            console.error(err);
+        } else {
+            const notes = JSON.parse(data);
+            // Create a new array of notes except the one with the id
+            const notesArr = notes.filter((note) => note.id !== id)
+
         }
     })
 })
