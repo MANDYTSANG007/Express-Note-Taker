@@ -2,8 +2,6 @@
 const fs = require("fs")
 const express = require("express");
 const path = require("path");
-const apiRoutes = require("./routes/apiRoutes");
-const htmlRoutes = require("./routes/htmlRoutes");
 const { v4: uuidv4 } = require("uuid");
 
 
@@ -14,14 +12,8 @@ const app = express();
 // Need for serving index.js
 app.use(express.static("public"));
 
-// Middleware for parsing JSON and urlencoded form data
-//app.use(express.urlencoded({ extended: true }));
-
 // Need for req.body
 app.use(express.json());
-
-//app.use("/", htmlRoutes);
-//app.use("/api", apiRoutes);
 
 app.get("/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
