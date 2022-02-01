@@ -1,10 +1,12 @@
-const e = require("express");
 const fs = require("fs");
+const express = require("express");
+const apiRoutes = express.Router();
+const app = express();
 // 
-const uuid = require("uuid");
+const { v4: uuidv4 } = require("uuid");
 
 // Obtain existing notes
-app.get("/notes", (req, res) => {
+app.get("/api/notes", (req, res) => {
     fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) {
             console.error(err);
@@ -16,10 +18,10 @@ app.get("/notes", (req, res) => {
 })
 
 //create new notes
-app.post("/notes", (req, res) => {
+app.post("/api/notes", (req, res) => {
     // Assign newNote in req.body and give newNote an unique id
     const newNote = req.body;
-    newNote.id = uuid;
+    newNote.id = uuidv4();
     fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) {
             console.error(err);
@@ -38,7 +40,7 @@ app.post("/notes", (req, res) => {
 })
 
 //delete note
-app.delete("/notes/:id", (req, res) => {
+app.delete("/api/notes/:id", (req, res) => {
     const id = req.params.id;
     fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) {
@@ -60,6 +62,7 @@ app.delete("/notes/:id", (req, res) => {
     })
 })
 
+module.exports = apiRoutes;
 //POST /api/notes should receive a new note to save on the request 
 //body, add it to the db.json file, and then return the new note to 
 //the client. You'll need to find a way to give each note a unique id 

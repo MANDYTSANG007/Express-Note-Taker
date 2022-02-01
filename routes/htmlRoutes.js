@@ -1,18 +1,19 @@
 const path = require("path");
-const htmlRoute = require("express").Router();
+const express = require("express");
+const htmlRoutes = require("express").Router();
 
 const app = express();
 
-app.get("/notes", (req, res) => 
-    res.sendFile(path.join(__dirname, "../public/notes.html"))
-);
+htmlRoutes.get("/notes", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/notes.html"));
+});
 
 // Set fallback route for when a user attempts to visit routes that don't exist
-app.get("*", (req, res) => 
-    res.sendFile(path.join(__dirname, "../public/index.html"))
-);
+htmlRoutes.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/index.html"));
+});
 
-module.exports = htmlRoute;
+module.exports = htmlRoutes;
 
 
 
