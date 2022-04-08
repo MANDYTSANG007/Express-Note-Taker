@@ -23,7 +23,7 @@ Download the files and install dependencies. On terminal, use "npm i" and then "
 
 ## Design Layout
 
-![alt text](./images/MT-Notebook.gif)
+
 ![alt text](./images/LandingPage.png)
 ![alt text](./images/NotePage.png)
 
