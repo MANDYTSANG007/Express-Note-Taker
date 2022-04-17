@@ -30,7 +30,7 @@ Download the files and install dependencies. On terminal, use "npm i" and then "
 
 ## Authors
 
-* **Mandy Tsang** 
+**Mandy Tsang** 
 
 - [Portfolio](https://mandytsang007.github.io/new-portfolio/)
 - [Github](https://github.com/MANDYTSANG007)
