@@ -10,7 +10,7 @@ Download the files and install dependencies. On terminal, use "npm i" and then "
 
 ## Built With
 
-* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://expressjs.com)
 * [Heroku](https://heroku.com)
