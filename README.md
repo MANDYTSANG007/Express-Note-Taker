@@ -1,12 +1,12 @@
 # MT Notebook
 
-MT Notebook is a note-taking application that gives users options to create, save, and delete notes. Using Express.js for backend development, it connects the pre-existing front-end framework to achieve the features in saving and retrieving note data from a JSON file. 
+MT Notebook is a note-taking application that gives users options to create, save, and delete notes. Using Express.js for backend development, it connects the front-end framework to achieve the features in saving and retrieving note data from a JSON file. 
 
 
 ## Getting Started
 
 A Get Started button on the landing page takes users to a note taking page where users can create, save, and delete notes. 
-Download the files and install dependencies. On terminal, use "npm i" and then "node server.js".
+Download the files and install dependencies. On terminal, run "npm i" and then "node server.js".
 
 ## Built With
 
@@ -22,7 +22,6 @@ Download the files and install dependencies. On terminal, use "npm i" and then "
 * [Link to Github](https://github.com/MANDYTSANG007/MT-Notebook)
 
 ## Design Layout
-
 
 ![alt text](./images/LandingPage.png)
 ![alt text](./images/NotePage.png)
