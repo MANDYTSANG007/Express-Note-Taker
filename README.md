@@ -33,7 +33,6 @@ Download the files and install dependencies. On terminal, run "npm i" and then "
 
 - [Portfolio](https://mandytsang007.github.io/new-portfolio/)
 - [Github](https://github.com/MANDYTSANG007)
-- [LinkedIn](https://www.linkedin.com/in/man-tsang-64308b22a/)
 
 
 ## License
